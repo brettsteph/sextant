@@ -6,7 +6,7 @@ function Banner(props) {
   const { siteTitle } = props;
   return (
     <>
-      <Navbar bg="light" className='banner'>
+      <Navbar className='banner' variant="dark">
         <Container>
           <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
         </Container>
