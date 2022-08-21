@@ -2,27 +2,16 @@ import Card from 'react-bootstrap/Card';
 import './Exibit.css'
 
 function Exibit(props) {
-  const { title } = props;
+  const { title, ipComponent } = props;
   return (
-    <>
-      <h2>{title}</h2>
+    <div>
       <Card className="exibit-card">
         <Card.Body>
-          <Card.Title>Data Point 1</Card.Title>
-          <Card.Text>
-            A pretty container to logically separate different data points
-          </Card.Text>
+          <Card.Title>{title}</Card.Title>
+          {ipComponent}
         </Card.Body>
       </Card>
-      <Card className="exibit-card">
-        <Card.Body>
-          <Card.Title>Data Point 2</Card.Title>
-          <Card.Text>
-            A pretty container to logically separate different data points
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </>
+    </div>
   )
 }
 export default Exibit;
