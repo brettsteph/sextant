@@ -1,17 +1,11 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import './Banner.css'
 
 function Banner(props) {
   const { siteTitle } = props;
   return (
-    <>
-      <Navbar className='banner' variant="dark">
-        <Container>
-          <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
-        </Container>
-      </Navbar>
-    </>
+    <div className='banner'>
+      <h1>{siteTitle}</h1>
+    </div>
   );
 }
 
