@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import Card from 'react-bootstrap/Card';
 
 
 const PublicIP = (props) => {
@@ -30,9 +29,9 @@ const PublicIP = (props) => {
   }, [url])
 
   return (
-    <Card.Text>
+    <div className="id-address">
       {ipAddress}
-    </Card.Text>
+    </div>
   )
 }
 
