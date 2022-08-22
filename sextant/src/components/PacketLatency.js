@@ -3,7 +3,7 @@ import { w3cwebsocket as W3CWebSocket } from "websocket"
 
 const PacketLatency = (props) => {
   const { url } = props;
-  const [latency, setLatency] = useState('');
+  const [latency, setLatency] = useState(null);
   const client = new W3CWebSocket(url);
 
   const connectToPylon = () => {
@@ -16,13 +16,10 @@ const PacketLatency = (props) => {
     };
 
     client.onmessage = function (message) {
-      const serverTime = JSON.parse(message.data);
-      console.log("Received: '" + serverTime + "'");
-      let now = Date.now();
-      let time = now - serverTime
-      let date = new Date(time * 1000)
-      console.log(date.getSeconds())
-      setLatency(date.getSeconds())
+      const serverTime = message.data;
+      let time = new Date().getTime()
+      console.log(time - serverTime)
+      setLatency(time - serverTime)
     };
   }
   connectToPylon();
