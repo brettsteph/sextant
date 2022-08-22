@@ -2,15 +2,9 @@ import { useEffect, useState } from "react"
 
 
 const PublicIP = (props) => {
-  const { ipVersion } = props;
+  const { url } = props;
   const [ipAddress, setIpAdress] = useState('')
-  let url = '';
-  if (ipVersion === 'ipv4') {
-    url = 'https://api.ipify.org?format=json';
-  } else if (ipVersion === 'ipv6') {
-    url = 'https://api64.ipify.org?format=json';
-  }
-
+  
   useEffect(() => {
 
     const fetchData = async () => {
